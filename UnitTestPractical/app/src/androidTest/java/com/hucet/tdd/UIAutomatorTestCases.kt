@@ -18,7 +18,7 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class UIAutomatorTestCases {
     companion object {
-        const val PACKAGE_NAME = "com.hucet.tdd.test"
+        const val PACKAGE_NAME = "com.hucet.tdd"
         private const val LAUNCH_TIMEOUT = 5000
     }
 
