@@ -1,0 +1,83 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-allopen'
+
+allOpen {
+    // allows mocking for classes w/o directly opening them for release builds
+    annotation 'kr.co.irobo.finance.debug.OpenClass'
+}
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.hucet.tdd"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation deps.kotlin.stdlib
+    implementation deps.androidX.appCompat
+    implementation deps.androidX.lifecycle.runtime
+    implementation deps.androidX.lifecycle.extensions
+    implementation deps.androidX.lifecycle.commonJava8
+    kapt deps.androidX.lifecycle.compiler
+    implementation deps.androidX.constraintlayout
+
+    implementation deps.androidX.recyclerview
+
+    testImplementation deps.kotlin.test
+    testImplementation deps.junit
+    testImplementation deps.robolectric
+    testImplementation deps.androidX.test.archCore
+    testImplementation deps.mockito.core
+    testImplementation deps.mock_kotlin
+    testImplementation deps.androidX.test.monitor
+    testImplementation deps.kotlintest.assertions
+    testImplementation deps.androidX.test.core
+
+testImplementation deps.junit
+    testImplementation deps.robolectric
+    testImplementation deps.mock_web_server
+    testImplementation deps.androidX.test.archCore
+    testImplementation deps.mockito.core
+    testImplementation deps.mock_kotlin
+    testImplementation deps.androidX.test.monitor
+    testImplementation deps.kotlintest.assertions
+    testImplementation deps.androidX.test.core
+
+    androidTestImplementation deps.androidX.test.espressoCore
+    androidTestImplementation deps.androidX.test.espressoContrib
+    androidTestImplementation deps.androidX.test.espressoIntents
+
+    androidTestImplementation deps.androidX.test.core
+    androidTestImplementation deps.androidX.test.runner
+    androidTestImplementation deps.androidX.test.extJunit
+    androidTestImplementation deps.mockito.core
+    androidTestImplementation deps.arch_core.testing
+    androidTestImplementation deps.mockito.android
+    androidTestImplementation deps.uiautomator
+}
