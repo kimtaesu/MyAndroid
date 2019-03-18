@@ -1,10 +1,11 @@
 package com.hucet.tdd
 
 import androidx.lifecycle.Observer
+import com.hucet.tdd.list.SampleRepository
+import com.hucet.tdd.list.SampleViewModel
 import com.nhaarman.mockito_kotlin.never
 import com.nhaarman.mockito_kotlin.verify
 import io.kotlintest.shouldBe
-import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith

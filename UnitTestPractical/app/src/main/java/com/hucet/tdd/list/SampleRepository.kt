@@ -1,4 +1,6 @@
-package com.hucet.tdd
+package com.hucet.tdd.list
+
+import com.hucet.tdd.Sample
 
 class SampleRepository {
     val fixture = listOf(

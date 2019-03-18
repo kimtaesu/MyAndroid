@@ -60,4 +60,11 @@ class UIAutomatorTestCases {
     fun testPresentSampleItems() {
         uiDevice.wait(Until.findObject(By.text("aaa")), 3)
     }
+
+    @Test
+    fun testClickSampleItem() {
+        uiDevice.wait(Until.findObject(By.text("aaa")), 3).click()
+        val detailTitle = uiDevice.wait(Until.findObject(By.res(PACKAGE_NAME, "detailTitle")), 3).text
+        Assert.assertEquals("aaa", detailTitle)
+    }
 }

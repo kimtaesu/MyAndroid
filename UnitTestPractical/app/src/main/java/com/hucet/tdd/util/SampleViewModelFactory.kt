@@ -2,7 +2,7 @@ package com.hucet.tdd.util
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.hucet.tdd.SampleRepository
+import com.hucet.tdd.list.SampleRepository
 
 class SampleViewModelFactory(val repository: SampleRepository) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {

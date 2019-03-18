@@ -8,6 +8,8 @@ import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
 import com.hucet.tdd.debug.SingleFragmentActivity
+import com.hucet.tdd.list.SampleListFragment
+import com.hucet.tdd.list.SampleViewModel
 import com.hucet.tdd.test.ViewModelUtil
 import com.hucet.tdd.util.DisableAnimationsRule
 import com.hucet.tdd.util.RecyclerViewMatcher
@@ -17,7 +19,6 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mockito
 import org.mockito.Mockito.*
-import java.util.*
 
 @RunWith(AndroidJUnit4::class)
 class SampleListFragmentTest {

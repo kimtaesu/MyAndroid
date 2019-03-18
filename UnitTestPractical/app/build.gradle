@@ -40,8 +40,15 @@ android {
         androidTest.java.srcDirs += "src/test-common/java"
         test.java.srcDirs += "src/test-common/java"
     }
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
 }
-
+androidExtensions {
+    experimental = true
+}
 dependencies {
     implementation deps.kotlin.stdlib
     implementation deps.androidX.appCompat
@@ -63,7 +70,7 @@ dependencies {
     testImplementation deps.kotlintest.assertions
     testImplementation deps.androidX.test.core
 
-testImplementation deps.junit
+    testImplementation deps.junit
     testImplementation deps.robolectric
     testImplementation deps.mock_web_server
     testImplementation deps.androidX.test.archCore

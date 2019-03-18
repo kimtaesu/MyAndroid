@@ -1,9 +1,11 @@
-package com.hucet.tdd
+package com.hucet.tdd.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
+import com.hucet.tdd.R
+import com.hucet.tdd.Sample
 import com.hucet.tdd.adapter.DataBoundListAdapter
 import com.hucet.tdd.databinding.ItemSampleBinding
 import java.util.concurrent.Executors
@@ -29,6 +31,11 @@ class SampleAdapter constructor(
             parent,
             false
         )
+        binding.root.setOnClickListener {
+            binding?.sample?.let {
+                callback?.invoke(it)
+            }
+        }
         return binding
     }
 
