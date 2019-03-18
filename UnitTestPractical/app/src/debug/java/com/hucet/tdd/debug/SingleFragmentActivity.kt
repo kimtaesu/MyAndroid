@@ -7,11 +7,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import com.hucet.tdd.R
+import com.hucet.tdd.Sample
+import com.hucet.tdd.SampleNavigation
+import com.hucet.tdd.list.SampleListFragment
 
 /**
  * Used for testing fragments inside a fake activity.
  */
-class SingleFragmentActivity : AppCompatActivity() {
+class SingleFragmentActivity : AppCompatActivity(), SampleNavigation {
+    override fun onDetail(sample: Sample) {
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val content = FrameLayout(this).apply {
